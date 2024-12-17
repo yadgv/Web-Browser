@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <style>
+      body,
+      h1 {
+        font-family: "Raleway", sans-serif;
+      }
+
+      body,
+      html {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .bgimg {
+        background-image: url("Assets/backgroundForest.jpg");
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+      }
+
+      #search-box {
+        position: absolute;
+        top: 90%;
+        right: 35%;
+        height: 5%;
+        width: 30%;
+        opacity: 0.1;
+        transition: all 0.5s;
+        font-size: 1vw;
+      }
+      #search-box:focus {
+        opacity: 0.8;
+        top: 70%;
+      }
+      #ct6 {
+        position: absolute;
+        font-size: 2vw;
+        left: 2%;
+        top: 2%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    </style>
+    <script>
+      // (function () {
+      //   var apiKey = 'YOUR_API_KEY';
+      //   var searchBox = document.getElementById('search-box');
+      //   searchBox.innerHTML = '<input type="text" name="q" placeholder="Search...">';
+      //   searchBox.innerHTML += '<button>Search</button>';
+      //   searchBox.addEventListener('submit', function (event) {
+      //     event.preventDefault();
+      //     var query = searchBox.querySelector('input[name="q"]').value;
+      //     // Send the query to your server-side script or API endpoint
+      //   });
+      // })();
+
+      function display_ct6() {
+        var x = new Date();
+        var minutes = x.getMinutes().toString();
+        minutes = minutes.length == 1 ? 0 + minutes : minutes;
+        var ampm = x.getHours() >= 12 ? " PM" : " AM";
+        hours = x.getHours() % 12;
+        hours = hours ? hours : 12;
+        x1 = hours + ":" + minutes + ampm;
+        document.getElementById("ct6").innerHTML = x1;
+        display_c6();
+      }
+      function display_c6() {
+        var refresh = 1000; // Refresh rate in milli seconds
+        mytime = setTimeout("display_ct6()", refresh);
+      }
+      display_c6();
+    </script>
+  </head>
+
+  <body>
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+      <span id="ct6"></span>
+      <div class="w3-display-middle">
+        <h1 class="w3-jumbo w3-animate-top">Testing Browser</h1>
+        <hr class="w3-border-grey" style="margin: auto; width: 40%" />
+        <p class="w3-large w3-center">Help Me</p>
+      </div>
+    </div>
+    <form action="https://cse.google.com/cse" method="GET">
+      <input type="hidden" name="cx" value="c3a9a095b59904d34" />
+      <input type="hidden" name="ie" value="UTF-8" />
+      <input id="search-box" placeholder="Search..." name="q" required />
+      <button type="submit">Search</button>
+    </form>
+  </body>
+</html>
+
+
